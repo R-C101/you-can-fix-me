@@ -1,0 +1,9 @@
+{
+    "id": "even_the_odds",
+    "title": "Even the Odds",
+    "difficulty": "medium",
+    "tags": ["python", "conditionals", "lists"],
+    "description": "Fix the function to return only the even numbers from a list.",
+    "author": "Rishit",
+    "created_at": "2025-05-17"
+  }

@@ -1,0 +1,10 @@
+{
+    "id": "clocked_in",
+    "title": "Clocked In",
+    "difficulty": "hard",
+    "tags": ["python", "datetime", "edge cases", "loops"],
+    "description": "Fix the logic to calculate the total hours worked using clock-in/clock-out log timestamps.",
+    "author": "Rishit",
+    "created_at": "2025-05-17"
+  }
+  

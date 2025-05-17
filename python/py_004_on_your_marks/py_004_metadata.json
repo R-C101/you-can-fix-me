@@ -1,0 +1,9 @@
+{
+    "id": "on_your_marks",
+    "title": "On Your Marks",
+    "difficulty": "medium",
+    "tags": ["python", "dicts", "loops", "basic operations"],
+    "description": "Fix the logic to correctly compute averages for each student's score list.",
+    "author": "you_can_fix_me",
+    "created_at": "2025-05-17"
+  }

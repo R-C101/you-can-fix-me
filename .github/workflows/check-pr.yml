@@ -1,0 +1,57 @@
+name: Bug Fix Checker
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  test-bugfixes:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Detect changed problem folders
+      id: changes
+      run: |
+        CHANGED=$(git diff --name-only origin/main...HEAD | grep '/' | cut -d '/' -f1,2 | sort -u)
+        echo "changed_dirs=$CHANGED" >> $GITHUB_OUTPUT
+
+    - name: Run *_test_me.py in each changed folder
+      run: |
+        failed=0
+        for path in ${{ steps.changes.outputs.changed_dirs }}; do
+          test_file=$(find "$path" -maxdepth 1 -name "*_test_me.py")
+          if [ -f "$test_file" ]; then
+            echo "🔍 Running test: $test_file"
+            if ! python3 "$test_file"; then
+              echo "::error::❌ Test failed for $path"
+              failed=1
+            else
+              echo "✅ Test passed for $path"
+            fi
+          else
+            echo "⚠️ No *_test_me.py file found in $path"
+          fi
+        done
+
+        if [[ $failed -eq 1 ]]; then
+          echo "Some tests failed."
+          exit 1
+        else
+          echo "✅ All tests passed."
+        fi
+
+    - name: Close PR if all tests pass
+      if: success()
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "Closing PR..."
+        gh pr close "$GITHUB_HEAD_REF" --comment "✅ All tests passed! Thanks for your fix. PR auto-closed since we keep original bugs intact."

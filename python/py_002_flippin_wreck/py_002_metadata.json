@@ -1,0 +1,10 @@
+{
+    "id": "flippin_wreck",
+    "title": "Flippin' Wreck",
+    "difficulty": "medium",
+    "tags": ["python", "strings", "method chaining"],
+    "description": "Fix the reverse_string function to return the reversed UPPERCASE version of the string.",
+    "author": "Rishit",
+    "created_at": "2025-05-17"
+  }
+  

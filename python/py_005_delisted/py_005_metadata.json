@@ -1,0 +1,10 @@
+{
+    "id": "delisted",
+    "title": "delisted",
+    "difficulty": "medium",
+    "tags": ["python", "lists", "flatten", "sorting"],
+    "description": "Fix the function to flatten a list of lists and sort the result.",
+    "author": "Rishit",
+    "created_at": "2025-05-17"
+}
+  

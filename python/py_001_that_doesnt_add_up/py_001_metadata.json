@@ -1,0 +1,9 @@
+{
+    "id": "that_doesnt_add_up",
+    "title": "That Doesn't Add Up",
+    "difficulty": "easy",
+    "tags": ["python", "basic operations", "logic bug"],
+    "description": "Fix the function to return the correct sum of two numbers.",
+    "author": "Rishit",
+    "created_at": "2025-05-17"
+  }
