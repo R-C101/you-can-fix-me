@@ -48,10 +48,9 @@ jobs:
           echo "✅ All tests passed."
         fi
 
-    - name: Close PR if all tests pass
-      if: success()
+    - name: Close PR using PAT
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_PAT }}
       run: |
         echo "Closing PR..."
-        gh pr close "$GITHUB_HEAD_REF" --comment "✅ All tests passed! Thanks for your fix. PR auto-closed since we keep original bugs intact."
+        gh pr close "$PR_URL" --comment "✅ All test cases passed. PR closed automatically."
