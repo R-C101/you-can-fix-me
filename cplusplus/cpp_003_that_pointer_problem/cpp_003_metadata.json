@@ -1,0 +1,9 @@
+{
+  "id": "that_pointer_problem",
+  "title": "That Pointer Problem",
+  "difficulty": "easy",
+  "tags": ["c++", "pointers", "memory bug"],
+  "description": "Fix the function to avoid returning a pointer to a local variable.",
+  "author": "Anshika Bhardwaj",
+  "created_at": "2025-05-17"
+}
