@@ -1,0 +1,10 @@
+{
+  "id": "flippin_wreck",
+  "title": "Flippin' Wreck",
+  "difficulty": "easy",
+  "tags": ["c++", "strings", "reversal", "logic bug"],
+  "description": "Fix the function to correctly reverse a string.",
+  "author": "Anshika",
+  "created_at": "2025-05-18"
+}
+
